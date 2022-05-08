@@ -20,7 +20,7 @@ if __name__ == '__main__':
     run_cmd = ["-f allure_behave.formatter:AllureFormatter", "-o" + "allure-results"]
 
     # 定位feature文件
-    ff = glob.glob(code_path + '/feature_test/{feature_name}.feature'.format(feature_name="baidu"))
+    ff = glob.glob(code_path + '/features/{feature_name}.feature'.format(feature_name="baidu_search"))
     run_cmd.extend(ff)
 
     # 通过Behave源码接执行脚本并将结果保存为json文件到allure-results目录下
