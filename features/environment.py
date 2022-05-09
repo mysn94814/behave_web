@@ -11,11 +11,13 @@ import os
 import shutil
 
 from base.driverInit import driverInit
+from page.baidu_page import BaiduPage
 
 
 def before_scenario(context, feature):
     context.drivers = driverInit(index=2)
-    print(context.drivers.driver1)
+
+    context.BaiduPage = BaiduPage()
 
 
 def after_scenario(context, feature):
