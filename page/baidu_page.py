@@ -15,8 +15,8 @@ class BaiduPage(Base):
 
     # 以下为类的初始化函数，其又调用了父类的初始化函数，这样做的目的是为了
     # 将context.driver串起来，在调用PO类时，可以使用超级全局变量context下的driver对象
-    def __init__(self, context):
-        super(BaiduPage, self).__init__(context.driver)
+    def __init__(self, driver):
+        super(BaiduPage, self).__init__(driver)
 
     def input_wd(self, words):
         self.base_input(self.elem_input_wd, words)

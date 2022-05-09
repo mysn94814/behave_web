@@ -10,13 +10,15 @@ import time
 import os
 import shutil
 
+from base.driverInit import driverInit
+
+
 def before_scenario(context, feature):
-    context.driver = webdriver.Chrome()
-    context.driver.implicitly_wait(10)
-    context.driver.maximize_window()
-    time.sleep(1)
+    context.drivers = driverInit(index=2)
+    print(context.drivers.driver1)
 
 
 def after_scenario(context, feature):
-    context.driver.quit()
+    context.drivers.quits()
+
 
